@@ -17,7 +17,7 @@ This project analyzes data collected from multiple willow field plots to explore
 Data from four field plots was cleaned and organized before being analyzed in R. Multiple R Markdown files are used to explore patterns within and across plots, with visualizations created to support interpretation.
 
 ## Repository Structure (in progress)
-This repository will include multiple R Markdown files, supporting data, and output visualizations as the project is further developed.
+This repository will include multiple R Markdown files, and output visualizations as the project is further developed.
 
 ## Status
 🚧 This project is currently being refined. Additional analyses, documentation, and outputs will be added.
