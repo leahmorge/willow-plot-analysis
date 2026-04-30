@@ -2,7 +2,6 @@
 title: "Willow Growth Analysis 2025"
 author: "Leah Morgenstern"
 output: html_document
-
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +32,7 @@ For privacy reasons, the initial portion of the code—such as reading in the da
 
 This analysis was conducted in R using the tidyverse ecosystem, primarily utilizing dplyr for data manipulation and ggplot2 for visualization.
 
----
+------------------------------------------------------------------------
 
 The overall goal of this analysis is to illustrate the progress the willow plants have made since Spring 2024, using a combination of previously collected data and data I assisted in collecting throughout the 2025 season.
 
@@ -45,29 +44,29 @@ Another metric recorded during field data collection was stem count, which can p
 
 Additional factors considered include:
 
- - Date of measurement (month and year)
- 
- - Species
- 
- - Planting method
- 
- - Field location
+-   Date of measurement (month and year)
 
----
+-   Species
+
+-   Planting method
+
+-   Field location
+
+------------------------------------------------------------------------
 
 ## Analytical Focus
 
 This analysis explores three primary questions:
 
- - How did willow height change over time as the plants established themselves?
- 
- - Do growth patterns differ across species or planting methods?
- 
- - Do environmental conditions across field locations influence plant performance?
+-   How did willow height change over time as the plants established themselves?
 
----
+-   Do growth patterns differ across species or planting methods?
 
-## Data Preperation
+-   Do environmental conditions across field locations influence plant performance?
+
+------------------------------------------------------------------------
+
+## Data Preparation
 
 ```{r}
 
@@ -89,7 +88,7 @@ To establish a clear timeline, I combined the month and year variables into a si
 
 The same approach was used for the planting type and field variables to ensure they appeared in a consistent and meaningful order within the visualizations.
 
----
+------------------------------------------------------------------------
 
 ### Plot 1: Overall Growth Trend
 
@@ -107,11 +106,11 @@ This first visualization presents an overall view of average plant height over t
 
 Clear plateaus appear during the winter months, which aligns with the seasonal pause in growth expected during colder temperatures in Massachusetts. The most substantial increase occurs during the 2025 growing season, particularly from April to August, when average height increases by approximately 45 cm.
 
-By this stage, the plants appear to be more established, which likely contributed to this period of accelerated growth.
+At this stage, the plants appear to be more established, which likely contributed to this period of accelerated growth.
 
 While this view provides a useful overview of the project’s progress, examining additional variables reveals more nuanced patterns in growth and performance.
 
----
+------------------------------------------------------------------------
 
 ### Plot 2: Species Differences
 
@@ -138,7 +137,7 @@ All species begin at similar heights following planting; however, *Salix purpure
 
 An important contextual detail is that *S. discolor*, *S. lucida*, and *S. sericea* are native to Massachusetts, whereas *S. purpurea* is native to Europe. The variety used in this project is a cultivated hybrid marketed under the name **Streamco**, bred for specific desirable traits. Its strong performance in this study may therefore reflect characteristics intentionally selected during cultivation.
 
----
+------------------------------------------------------------------------
 
 ### Plot 3: Planting Method
 
@@ -168,7 +167,7 @@ Overall, the results suggest that willows planted directly into the ground estab
 
 Although Rooted plants show strong improvement during the 2025 growing season, Staked plants remain consistently taller—by approximately 10 cm or more—throughout most of the observation period.
 
----
+------------------------------------------------------------------------
 
 ### Plot 4: Interaction Between Species & Planting Type
 
@@ -196,7 +195,7 @@ Although Staked plants generally exhibit greater growth overall, this pattern is
 
 Meanwhile, *S. purpurea* continues to outperform the other species across both planting methods, reinforcing its dominance throughout the dataset.
 
----
+------------------------------------------------------------------------
 
 ### Plot 5: Faceted Species Comparison
 
@@ -215,11 +214,11 @@ ggplot(willowperform, aes(x = month_year, y = height_cm,
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-The same relationship is shown again here, but faceted by species to make the individual patterns easier to interpret.
+The same relationship is shown again here but faceted by species to make the individual patterns easier to interpret.
 
 Separating the species allows the differences between planting types to become more apparent within each group. This view reinforces the earlier observation that *S. purpurea* consistently performs well regardless of planting method, while species such as *S. lucida* show comparatively limited growth across both treatments.
 
----
+------------------------------------------------------------------------
 
 ### Plot 6: Field Location
 
@@ -252,7 +251,7 @@ Seasonal trends remain visible across all sites, with most growth occurring duri
 
 The particularly strong performance at the Barberry site may warrant further investigation. Differences in soil moisture, drainage, or microenvironmental conditions may have created more favorable growing conditions for the willows at this location.
 
----
+------------------------------------------------------------------------
 
 ### Plot 7: Planting Type by Location
 
@@ -274,7 +273,7 @@ ggplot(willowperform, aes(x = month_year, y = height_cm,
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-Examining planting method within each location reveals several interesting patterns.
+Examining the planting method within each location reveals several interesting patterns.
 
 At the Barberry site, Rooted plants ultimately end the observation period nearly 30 cm taller than their Staked counterparts. In Underhill, the Rooted plants briefly surpass the Staked plants around August 2025, though the two groups converge again by the final measurement in October.
 
@@ -282,7 +281,7 @@ In contrast, GP1 and GP2 follow trends more consistent with the earlier planting
 
 These differences suggest that the effectiveness of each planting method may also depend on site-specific environmental conditions.
 
----
+------------------------------------------------------------------------
 
 ### Plot 8: Location-Faceted Comparison
 
@@ -305,7 +304,7 @@ This visualization shows the same relationship as the previous plot but faceted 
 
 Once again, the Barberry Rooted plants stand out, surpassing the other groups in height by the end of the observation period. Underhill also shows periods where Rooted plants approach or briefly exceed the height of the Staked plants, reinforcing the idea that local site conditions may influence how planting method affects growth.
 
----
+------------------------------------------------------------------------
 
 ### Plot 9: Species Trends by Location
 
@@ -327,7 +326,7 @@ ggplot(willowperform, aes(x = month_year, y = height_cm,
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-This plot returns to species comparisons, but now the data are faceted by location, revealing how species performance varies across different environments.
+This plot returns to species comparisons, but now the data are faceted by location, revealing how species' performance varies across different environments.
 
 In GP1, all four species follow relatively similar trajectories, with *S. discolor* and *S. purpurea* slightly leading the group.
 
@@ -339,7 +338,7 @@ A similar pattern appears in Underhill, where *S. sericea* ultimately surpasses 
 
 Across all locations, *S. lucida* consistently shows the slowest growth, reinforcing earlier observations that it struggles relative to the other species.
 
----
+------------------------------------------------------------------------
 
 ### Plot 10: Location Trends by Species
 
@@ -367,7 +366,7 @@ Although this perspective is somewhat exploratory, it highlights subtle differen
 
 While it would be possible to incorporate planting type into these comparisons as well, doing so would significantly increase the complexity of the visualization and make interpretation more difficult.
 
----
+------------------------------------------------------------------------
 
 ## Conclusion
 
@@ -379,12 +378,14 @@ Planting method also appears to influence establishment success. In most cases, 
 
 Finally, field location plays an important role in growth outcomes. The Barberry site in particular shows significantly greater height gains than the other locations, possibly due to favorable soil moisture or drainage conditions.
 
+Growth is ONE Part.
+
 Together, these findings suggest that species selection, planting method, and site conditions all contribute to willow establishment success, and they may help inform future restoration or agroecological planting efforts at Appleton Farms and similar landscapes.
 
----
+------------------------------------------------------------------------
 
 ## Implications for Future Plantings
 
 Based on these findings, *Salix purpurea* appears to be the most resilient and consistently high-performing species across locations. Additionally, direct ground planting (Staked) may support faster early establishment compared to transplanting. Site conditions also appear to influence growth outcomes, as demonstrated by the strong performance observed at the Barberry location. These insights may help guide future restoration and agroecological planting strategies at Appleton Farms.
 
----
+------------------------------------------------------------------------
